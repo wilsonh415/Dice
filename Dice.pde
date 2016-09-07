@@ -1,15 +1,15 @@
 void setup()
 {
-	size(1000,1000);
+	size(500,500);
 	noLoop();
 }
 void draw()
 {
 	background(125);
-	for(void x = 50; for x < 1000; x = x + 5) {
-
+	for(int x = 50; x < 500; x = x + 5) {
+		Die one = new Die();
+		one.show();
 	}
-
 
 }
 void mousePressed()
@@ -19,24 +19,28 @@ void mousePressed()
 class Die //models one single dice cube
 {
 	//variable declarations here
-	Die(int x, int y) //constructor
+	int numRolled, myX, myY;
+	Die()
 	{
-		int value;
-		int myX, myY;
-		Die(int x, int y) {
-
-		value = (int)(Math.random()*7);
-		myX = x;
-		myY = y;
-	}
+		roll();
+		myX = 10;
+		myY = 10;
 	}
 	void roll()
 	{
-		//your code here
+		numRolled = (int)((Math.random()*6) + 1);
 	}
 	void show()
 	{
 		fill(255);
-		rect(myX,myY,20,20);
+		rect(myX,myY,45,45, 10);
+		if(numRolled == 1) {
+		fill(0);
+		ellipse(myX + 23, myY + 23, 10 ,10);
+	}
+		if(numRolled == 2)
+		fill(0);
+		ellipse(myX + 15, myY + 23, 10, 10);
+		ellipse(myX + 33, myY + 23, 10, 10);
 	}
 }
