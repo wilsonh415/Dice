@@ -17,7 +17,7 @@ void mousePressed()
 	redraw();
 }
 class Die //models one single dice cube
-{
+	{
 	//variable declarations here
 	int numRolled, myX, myY;
 	Die()
@@ -33,14 +33,29 @@ class Die //models one single dice cube
 	void show()
 	{
 		fill(255);
-		rect(myX,myY,45,45, 10);
+		rect(myX,myY,50,50, 10);
 		if(numRolled == 1) {
 		fill(0);
-		ellipse(myX + 23, myY + 23, 10 ,10);
+		ellipse(myX + 25, myY + 25, 10 ,10);
 	}
-		if(numRolled == 2)
+		if(numRolled == 2) {
 		fill(0);
-		ellipse(myX + 15, myY + 23, 10, 10);
-		ellipse(myX + 33, myY + 23, 10, 10);
+		ellipse(myX + 17, myY + 25, 10, 10);
+		ellipse(myX + 35, myY + 25, 10, 10);
 	}
+		if(numRolled == 3) {
+		fill(0);
+		ellipse(myX + 25, myY + 25, 10 ,10);
+		ellipse(myX + 25, myY + 12, 10, 10);
+		ellipse(myX + 25, myY + 38, 10, 10);
+		}
+		if(numRolled == 4) {
+		fill(0);
+		ellipse(myX + 17, myY + 35, 10, 10);
+		ellipse(myX + 35, myY + 35, 10, 10);
+		ellipse(myX + 17, myY + 15, 10, 10);
+		ellipse(myX + 35, myY + 15, 10, 10);
+		}
+		
+}
 }
