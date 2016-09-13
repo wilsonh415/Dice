@@ -6,9 +6,14 @@ void setup()
 void draw()
 {
 	background(125);
-	for(int x = 50; x < 500; x = x + 5) {
-		Die one = new Die();
+	for(int x = 15; x < 480; x+= 60) {
+		for(int y = 15; y < 430; y+= 60) {
+		Die one = new Die(x, y); 
 		one.show();
+		}
+	fill(0,125,0);
+	textSize(50);
+	text("Total = numRolled", 30, 475);
 	}
 
 }
@@ -20,11 +25,11 @@ class Die //models one single dice cube
 	{
 	//variable declarations here
 	int numRolled, myX, myY;
-	Die()
+	Die(int x, int y)
 	{
 		roll();
-		myX = 10;
-		myY = 10;
+		myX = x;
+		myY = y;
 	}
 	void roll()
 	{
@@ -56,6 +61,22 @@ class Die //models one single dice cube
 		ellipse(myX + 17, myY + 15, 10, 10);
 		ellipse(myX + 35, myY + 15, 10, 10);
 		}
-		
+		if(numRolled ==5) {
+		fill(0);
+		ellipse(myX + 25, myY + 25, 10 ,10);
+		ellipse(myX + 15, myY + 37, 10, 10);
+		ellipse(myX + 37, myY + 37, 10, 10);
+		ellipse(myX + 15, myY + 13, 10, 10);
+		ellipse(myX + 37, myY + 13, 10, 10);
+		}
+		if(numRolled == 6){
+		fill(0);
+		ellipse(myX + 17, myY + 25, 10 ,10);
+		ellipse(myX + 17, myY + 12, 10, 10);
+		ellipse(myX + 17, myY + 38, 10, 10);
+		ellipse(myX + 35, myY + 25, 10 ,10);
+		ellipse(myX + 35, myY + 12, 10, 10);
+		ellipse(myX + 35, myY + 38, 10, 10);
+		}
 }
 }
