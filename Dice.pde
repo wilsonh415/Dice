@@ -1,3 +1,5 @@
+int numRolled;
+int theTotal = 0;
 void setup()
 {
 	size(500,500);
@@ -10,12 +12,12 @@ void draw()
 		for(int y = 15; y < 430; y+= 60) {
 		Die one = new Die(x, y); 
 		one.show();
+		theTotal = theTotal + numRolled;
 		}
 	fill(0,125,0);
 	textSize(50);
-	text("Total = numRolled", 30, 475);
-	}
-
+	text("Total:" + theTotal, 30, 475);
+		}
 }
 void mousePressed()
 {
