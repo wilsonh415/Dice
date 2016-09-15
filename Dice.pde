@@ -12,16 +12,18 @@ void draw()
 		for(int y = 15; y < 430; y+= 60) {
 		Die one = new Die(x, y); 
 		one.show();
-		theTotal = theTotal + numRolled;
+		theTotal = theTotal + one.numRolled;
 		}
-	fill(0,125,0);
-	textSize(50);
-	text("Total:" + theTotal, 30, 475);
+		fill(0,125,0);
+		textSize(50);
+		text("Total:" + theTotal, 30, 475);
+
 		}
 }
 void mousePressed()
 {
 	redraw();
+
 }
 class Die //models one single dice cube
 	{
