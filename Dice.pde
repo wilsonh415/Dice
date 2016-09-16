@@ -1,5 +1,6 @@
-int numRolled;
+Die one;
 int theTotal = 0;
+
 void setup()
 {
 	size(500,500);
@@ -8,22 +9,25 @@ void setup()
 void draw()
 {
 	background(125);
-	for(int x = 15; x < 480; x+= 60) {
-		for(int y = 15; y < 430; y+= 60) {
+	for(int x = 15; x < 480; x+= 80) {
+		for(int y = 15; y < 400; y+= 80) {
 		Die one = new Die(x, y); 
+		one.roll();
 		one.show();
 		theTotal = theTotal + one.numRolled;
 		}
+		noStroke();
+		fill(125);
+		rect(0,425, 500,100);
 		fill(0,125,0);
 		textSize(50);
-		text("Total:" + theTotal, 30, 475);
-
+		text("Total: " + theTotal, 30, 475);
 		}
 }
 void mousePressed()
 {
 	redraw();
-
+	theTotal = 0;
 }
 class Die //models one single dice cube
 	{
